@@ -288,7 +288,7 @@ def paidorder(request):
     #collecting data for paystack use
     api_key = 'sk_test_0c3bb25f14513ee95dcbe057e8b007f8b8480aa1'
     curl = 'https://api.paystack.co/transaction/initialize'
-    cburl = 'http://3.141.168.122/completed/'
+    cburl = 'http://3.141.168.122/completed'
     total = float(request.POST['gtotal']) * 100
     order_num = request.POST['order_no']
     ref_num = ''.join(random.choices(string.digits + string.ascii_letters, k=8))
