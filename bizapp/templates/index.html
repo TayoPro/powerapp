@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock title %}
+
+<!-- header  -->
+{% block header %} {% include "header.html" %} {% endblock header %}
+<!-- header done -->
+<!-- content  -->
+{% block content %}
+
+
+<div class="container-fluid m-5">
+    <div class="container mt-5 mb-5">
+        <h1>Featured Products</h1>
+        <div class="row">
+            {% if featured %} {% for item in featured %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3 mt-3">
+                <div class="card">
+                    <a href="{% url 'detail' item.id %}"><img src="{{item.img.url}}" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="{% url 'detail' item.id %}">
+                            <h5 class="card-title">Product:{{item.name}}</h5>
+                        </a>
+                        <p class="card-text">Price:{{item.price}}</p>
+                    </div>
+                    <a href="{% url 'detail' item.id %}"><button type="submit" class="btn btn-primary">Buy</button></a>
+                </div>
+            </div>
+            <!--  -->
+            {% endfor %} {% endif %}
+        </div>
+    </div>
+    <div class="container mt-5 mb-5">
+        <h1>Latest Products</h1>
+        <div class="row">
+            {% if latest %} {% for item in latest %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3 mt-3">
+                <div class="card">
+                    <a href="{% url 'detail' item.id %}"><img src="{{item.img.url}}" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="{% url 'detail' item.id %}">
+                            <h5 class="card-title">Product:{{item.name}}</h5>
+                        </a>
+                        <p class="card-text">Price:{{item.price}}</p>
+                    </div>
+                    <a href="{% url 'detail' item.id %}"><button type="submit" class="btn btn-primary">Buy</button></a>
+                </div>
+            </div>
+            <!--  -->
+            {% endfor %} {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+<!-- content done -->
+
+
+<!-- footer  -->
+{% block footer %} {% include "footer.html" %} {% endblock footer %}
+<!-- footer done -->

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %} All Category {% endblock title %}
+
+<!-- header  -->
+{% block header %} {% include "header.html" %} {% endblock header %}
+<!-- header done -->
+
+<!-- content  -->
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        {% if categories %} {% for item in categories %}
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3 mt-3">
+            <div class="card">
+                <a href="{% url 'detail' item.id %}"><img src="{{item.img.url}}" class="card-img-top"></a>
+                <div class="card-body">
+                    <a href="{% url 'category' item.id %}">
+                        <h5 class="card-title">{{item.title}}</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        {% endfor %} {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
+<!-- content done -->

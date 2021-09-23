@@ -1,0 +1,14 @@
+.navbar {
+    background: lightpink;
+}
+
+#navbarSupportedContent a {
+    color: black;
+    font-weight: bold;
+}
+
+.foot {
+    background: lightpink;
+    color: white;
+    font-weight: bolder;
+}
